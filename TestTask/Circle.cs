@@ -11,6 +11,9 @@ public class Circle : Shape
 
     public Circle(double radius)
     {
+        if (radius <= 0)
+            throw new ArgumentException("Radius must be greater than 0");
+        
         Radius = radius;
 
         var factory = new CircleAlgorithmFactory(radius);
